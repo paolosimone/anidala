@@ -1,0 +1,232 @@
+syntax = "proto3";
+
+// Invite
+
+message Invite {
+  string group            = 1;
+  repeated Guest guests   = 2; 
+}
+
+message Guest {
+  string id               = 1;
+  string name             = 2;
+  optional Avatar avatar  = 3;
+}
+
+// Avatars
+// https://github.com/fangpenlin/avataaars/blob/master/src/options/index.tsx
+
+message Avatar {
+  SkinColor skinColor                   = 1;
+  Top topType                           = 2;       
+  HairColor hairColor                   = 3;                                    
+  HatColor hatColor                     = 4;
+  Accessories accessoriesType           = 5;                       
+  FacialHair facialHairType             = 6;                     
+  FacialHairColor facialHairColor       = 7;                                               
+  Clothe clotheType                     = 8;             
+  ClotheColor clotheColor               = 9;                                           
+  ClotheGraphic graphicType             = 10;                                              
+  Eye eyeType                           = 11;                               
+  Eyebrow eyebrowType                   = 12;                                   
+  Mouth mouthType                       = 13;           
+}
+
+enum SkinColor {
+  Light                   = 0;
+  Yellow                  = 1;
+  Pale                    = 2;
+  Tanned                  = 3;
+  Brown                   = 4;
+  Darkbrown               = 5;
+  Black                   = 6;
+}
+
+enum Clothe {
+  BlazerShirt             = 0;            
+  BlazerSweater           = 1;              
+  CollarSweater           = 2;              
+  GraphicShirt            = 3;             
+  Hoodie                  = 4;       
+  Overall                 = 5;        
+  ShirtCrewNeck           = 6;              
+  ShirtScoopNeck          = 7;               
+  ShirtVNeck              = 8;           
+}
+
+enum ClotheColor {
+  Black                   = 0;
+  Blue01                  = 1;
+  Blue02                  = 2;
+  Blue03                  = 3;
+  Gray01                  = 4;
+  Gray02                  = 5;
+  Heather                 = 6;
+  PastelBlue              = 7;
+  PastelGreen             = 8;
+  PastelOrange            = 9;
+  PastelRed               = 10;
+  PastelYellow            = 11;
+  Pink                    = 12;
+  Red                     = 13;
+  White                   = 14;
+}
+
+enum ClotheGraphic {
+  Bat                     = 0;   
+  Cumbia                  = 1;     
+  Deer                    = 2;   
+  Diamond                 = 3;       
+  Hola                    = 4;   
+  Pizza                   = 5;     
+  Resist                  = 6;     
+  Selena                  = 7;     
+  Bear                    = 8;   
+  SkullOutline            = 9;           
+  Skull                   = 10;     
+}
+
+enum Eyebrow {
+  Default                 = 0;          
+  Angry                   = 1;        
+  AngryNatural            = 2;               
+  DefaultNatural          = 3;                 
+  FlatNatural             = 4;              
+  RaisedExcited           = 5;                
+  RaisedExcitedNatural    = 6;                       
+  SadConcerned            = 7;               
+  SadConcernedNatural     = 8;                      
+  UnibrowNatural          = 9;                 
+  UpDown                  = 10;         
+  UpDownNatural           = 11;                
+}
+
+enum Eye {
+  Default                 = 0;              
+  Close                   = 1;            
+  Cry                     = 2;          
+  Dizzy                   = 3;            
+  EyeRoll                 = 4;              
+  Happy                   = 5;            
+  Hearts                  = 6;             
+  Side                    = 7;           
+  Squint                  = 8;             
+  Surprised               = 9;                
+  Wink                    = 10;           
+  WinkWacky               = 11;                
+}
+
+enum Mouth {
+  Default                 = 0;           
+  Concerned               = 1;             
+  Disbelief               = 2;             
+  Eating                  = 3;          
+  Grimace                 = 4;           
+  Sad                     = 5;       
+  ScreamOpen              = 6;              
+  Serious                 = 7;           
+  Smile                   = 8;         
+  Tongue                  = 9;          
+  Twinkle                 = 10;           
+  Vomit                   = 11;         
+}
+
+enum Top {
+  NoHair                      = 0;     
+  Eyepatch                    = 1;       
+  Hat                         = 2;  
+  Hijab                       = 3;    
+  Turban                      = 4;     
+  WinterHat1                  = 5;         
+  WinterHat2                  = 6;         
+  WinterHat3                  = 7;         
+  WinterHat4                  = 8;         
+  LongHairBigHair             = 9;              
+  LongHairBob                 = 10;          
+  LongHairBun                 = 11;          
+  LongHairCurly               = 12;            
+  LongHairCurvy               = 13;            
+  LongHairDreads              = 14;             
+  LongHairFrida               = 15;            
+  LongHairFro                 = 16;          
+  LongHairFroBand             = 17;              
+  LongHairNotTooLong          = 18;                 
+  LongHairShavedSides         = 19;                  
+  LongHairMiaWallace          = 20;                 
+  LongHairStraight            = 21;               
+  LongHairStraight2           = 22;                
+  LongHairStraightStrand      = 23;                     
+  ShortHairDreads01           = 24;                
+  ShortHairDreads02           = 25;                
+  ShortHairFrizzle            = 26;               
+  ShortHairShaggyMullet       = 27;                    
+  ShortHairShortCurly         = 28;                  
+  ShortHairShortFlat          = 29;                 
+  ShortHairShortRound         = 30;                  
+  ShortHairShortWaved         = 31;                  
+  ShortHairSides              = 32;             
+  ShortHairTheCaesar          = 33;                 
+  ShortHairTheCaesarSidePart  = 34;                         
+}
+
+enum HairColor {
+  Auburn                  = 0;             
+  Black                   = 1;           
+  Blonde                  = 2;             
+  BlondeGolden            = 3;                   
+  Brown                   = 4;           
+  BrownDark               = 5;               
+  PastelPink              = 6;                 
+  Blue                    = 7;           
+  Platinum                = 8;               
+  Red                     = 9;         
+  SilverGray              = 10;                 
+}
+
+enum HatColor {
+  Black                   = 0;      
+  Blue01                  = 1;       
+  Blue02                  = 2;       
+  Blue03                  = 3;       
+  Gray01                  = 4;       
+  Gray02                  = 5;       
+  Heather                 = 6;        
+  PastelBlue              = 7;           
+  PastelGreen             = 8;            
+  PastelOrange            = 9;             
+  PastelRed               = 10;          
+  PastelYellow            = 11;             
+  Pink                    = 12;     
+  Red                     = 13;    
+  White                   = 14;      
+}
+
+enum Accessories {
+  Blank                       = 0;       
+  Kurt                        = 1;      
+  Prescription01              = 2;                
+  Prescription02              = 3;                
+  Round                       = 4;       
+  Sunglasses                  = 5;            
+  Wayfarers                   = 6;           
+}
+
+enum FacialHair {
+  Blank                       = 0;    
+  BeardMedium                 = 1;          
+  BeardLight                  = 2;         
+  BeardMajestic               = 3;            
+  MoustacheFancy              = 4;             
+  MoustacheMagnum             = 5;              
+}
+
+enum FacialHairColor {
+  Auburn                      = 0;         
+  Black                       = 1;        
+  Blonde                      = 2;         
+  BlondeGolden                = 3;               
+  Brown                       = 4;        
+  BrownDark                   = 5;            
+  Platinum                    = 6;           
+  Red                         = 7;      
+}
